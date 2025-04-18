@@ -1,0 +1,166 @@
+.timeline-circle-container {
+	position: relative;
+	width: 530px;
+	height: 530px;
+	margin-top: 20px;
+}
+
+.circle-with-lines {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	border: 1px solid #42567a33;
+
+	&::before {
+		content: '';
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		height: 215%;
+		width: 1px;
+		background-color: #42567a33;
+		z-index: 2;
+	}
+
+	&::after {
+		content: '';
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 100vw;
+		height: 1px;
+		background-color: #42567a33;
+		z-index: 0;
+	}
+}
+
+.period-dot {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	will-change: transform;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	z-index: 5;
+	width: 6px;
+	height: 6px;
+	background: #42567a;
+
+	&-number {
+		opacity: 0;
+		font-weight: 700;
+		font-size: 20px;
+		color: #42567a;
+		pointer-events: none;
+	}
+
+	&.active {
+		width: 56px;
+		height: 56px;
+		background: white;
+		border: 1px solid #42567a;
+
+		.period-dot-number {
+			opacity: 1;
+		}
+
+		.period-title {
+			position: absolute;
+			top: -30px;
+			left: 50%;
+			transform: translateX(-50%);
+			white-space: nowrap;
+			font-size: 14px;
+			color: #42567a;
+			font-weight: 700;
+			padding: 2px 8px;
+		}
+	}
+}
+
+.center-period {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	text-align: center;
+	z-index: 3;
+	pointer-events: none;
+
+	.period-years {
+		font-size: 200px;
+		font-weight: bold;
+		line-height: 1;
+		font-family: 'PT Sans', sans-serif;
+		text-wrap: nowrap;
+
+		span {
+			display: inline-block;
+			min-width: 100px;
+			text-align: center;
+		}
+
+		.start-year {
+			color: #3877ee;
+		}
+
+		.end-year {
+			color: #ee389c;
+		}
+	}
+}
+
+.circle-nav {
+	position: absolute;
+	bottom: 20px;
+	left: -215px;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 8px;
+	z-index: 10;
+}
+
+.circle-period-info {
+	font-size: 16px;
+	font-weight: 700;
+	color: #42567a;
+	font-family: 'PT Sans', sans-serif;
+}
+
+.circle-nav-buttons {
+	display: flex;
+	gap: 10px;
+}
+
+.circle-nav-button {
+	width: 40px;
+	height: 40px;
+	background: white;
+	border: 1px solid #42567a;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	transition:
+		transform 0.2s ease,
+		background 0.2s ease;
+
+	&:hover {
+		transform: scale(1.1);
+		background: #f0f4ff;
+	}
+
+	svg {
+		width: 18px;
+		height: 18px;
+	}
+}

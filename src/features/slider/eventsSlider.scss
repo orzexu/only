@@ -1,0 +1,80 @@
+.events-slider-container {
+	width: 100%;
+	max-width: 1200px;
+	padding: 0 60px;
+	box-sizing: border-box;
+	margin: 0 auto;
+	position: relative;
+	overflow: hidden;
+
+	.event-card {
+		background: white;
+		border-radius: 8px;
+		padding: 30px;
+		height: 220px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+
+		.event-year {
+			font-size: 25px;
+			color: #3877ee;
+			margin: 0 0 15px 0;
+			font-weight: 700;
+			line-height: 1.2;
+		}
+
+		.event-description {
+			font-size: 16px;
+			color: #42567a;
+			line-height: 1.5;
+			margin: 0;
+		}
+	}
+
+	.swiper {
+		width: 100%;
+		overflow: visible;
+		padding: 0;
+	}
+
+	.swiper-wrapper {
+		width: 100%;
+		box-sizing: border-box;
+		padding: 0;
+		cursor: pointer;
+		z-index: 1;
+	}
+
+	.swiper-slide {
+		width: auto;
+		box-sizing: border-box;
+	}
+
+	.swiper-button-prev,
+	.swiper-button-next {
+		color: #3877ee;
+		width: 40px;
+		height: 40px;
+		background: white;
+		border-radius: 50%;
+		box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+		top: 50%;
+		transform: translateY(-50%);
+		z-index: 10;
+		margin-top: 0;
+
+		&::after {
+			font-size: 18px;
+			font-weight: bold;
+		}
+	}
+
+	.swiper-button-prev {
+		left: -50px;
+	}
+
+	.swiper-button-next {
+		right: -50px;
+	}
+}
