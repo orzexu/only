@@ -1,8 +1,8 @@
 Installation<br/>
 Clone the repository:
 
-git clone https://github.com/orzexu/testTaskonly.git<br/>
-cd testTaskonly<br/>
+git clone https://github.com/orzexu/only.git<br/>
+cd only<br/>
 
 
 Install dependencies:<br/>
